@@ -36,10 +36,11 @@ window.onload = function() {
 
         fetch("/home", params).then( (res) => res.json() ).then( (docs) => {
 
-            let list = "<table><tr><td>名前</td><td>生年月日</td><td>入所年月日</td><td>所属</td><td>役職</td></tr>";
+            let list = "<table><tr><td>database-id</td><td>名前</td><td>生年月日</td><td>入所年月日</td><td>所属</td><td>役職</td></tr>";
             for (const doc of docs) {
                 let row = "<tr>" + 
-                "<td>" + doc.name + 
+                "<td>" + doc._id + 
+                "</td><td>" + doc.name +
                 "</td><td>" + doc.birthday +
                 "</td><td>" + doc.joinday +
                 "</td><td>" + doc.group +
